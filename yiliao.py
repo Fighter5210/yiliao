@@ -1,6 +1,8 @@
 # 实现了一个混合搜索系统，结合了BM25和密集向量检索两种方法
 #pip install rank_bm25
 #pip install jieba
+import os
+
 import numpy as np
 from rank_bm25 import BM25Okapi
 import jieba
@@ -10,6 +12,11 @@ from chromadb.config import Settings
 
 from models import get_normal_client, Constants
 get_normal_client(debug=True)
+
+print("当前工作目录:", os.getcwd())
+print("脚本所在目录:", os.path.dirname(os.path.abspath(__file__)))
+print("目录下文件:", os.listdir(os.path.dirname(os.path.abspath(__file__))))
+
 # 查询的问题
 query = "得了白癜风，怎么办"
 
